@@ -49,14 +49,24 @@ def error(update, context):
 
 #yanning functions
 def playmusic(update, context):
+    """Send a message when the command /help is issued."""
+    update.message.reply_text('Playing music')
 
 def time(update, context):
+    """Send a message when the command /help is issued."""
+    update.message.reply_text('The time is:')
 
 def stop(update, context):
+    """Send a message when the command /help is issued."""
+    update.message.reply_text('Stopping everything...')
 
 def setvol(update, context):
+    """Send a message when the command /help is issued."""
+    update.message.reply_text('Setting volume to ' + update.message.text)
 
 def say(update, context):    
+    """Send a message when the command /help is issued."""
+    update.message.reply_text('Saying ' + update.message.text)
 
 
 def main():
@@ -72,6 +82,13 @@ def main():
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("help", help))
+    dp.add_handler(CommandHandler("echo", echo))
+    dp.add_handler(CommandHandler("error", error))
+    dp.add_handler(CommandHandler("playmusic", playmusic))
+    dp.add_handler(CommandHandler("time", time))
+    dp.add_handler(CommandHandler("stop", stop))
+    dp.add_handler(CommandHandler("setvol", setvol))
+    dp.add_handler(CommandHandler("say", say))
 
     # on noncommand i.e message - echo the message on Telegram
     dp.add_handler(MessageHandler(Filters.text, echo))
