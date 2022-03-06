@@ -47,6 +47,17 @@ def error(update, context):
     """Log Errors caused by Updates."""
     logger.warning('Update "%s" caused error "%s"', update, context.error)
 
+#yanning functions
+def playmusic(update, context):
+
+def time(update, context):
+
+def stop(update, context):
+
+def setvol(update, context):
+
+def say(update, context):    
+
 
 def main():
     """Start the bot."""
